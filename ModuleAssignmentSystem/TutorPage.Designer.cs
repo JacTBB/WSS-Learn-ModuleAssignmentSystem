@@ -32,6 +32,8 @@
             this.btnDeleteTutor = new System.Windows.Forms.Button();
             this.btnAddTutor = new System.Windows.Forms.Button();
             this.moduleTable = new System.Windows.Forms.DataGridView();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.search = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.moduleTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,11 +95,31 @@
             this.moduleTable.TabIndex = 8;
             this.moduleTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.moduleTable_CellContentClick);
             // 
+            // lblSearch
+            // 
+            this.lblSearch.Location = new System.Drawing.Point(501, 85);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(55, 20);
+            this.lblSearch.TabIndex = 17;
+            this.lblSearch.Text = "Search:";
+            this.lblSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // search
+            // 
+            this.search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.search.Location = new System.Drawing.Point(558, 81);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(100, 22);
+            this.search.TabIndex = 16;
+            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
+            // 
             // TutorPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 353);
+            this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.search);
             this.Controls.Add(this.btnDeleteTutor);
             this.Controls.Add(this.btnAddTutor);
             this.Controls.Add(this.moduleTable);
@@ -106,6 +128,7 @@
             this.Text = "TutorPage";
             ((System.ComponentModel.ISupportInitialize)(this.moduleTable)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -115,5 +138,7 @@
         private System.Windows.Forms.Button btnDeleteTutor;
         private System.Windows.Forms.Button btnAddTutor;
         private System.Windows.Forms.DataGridView moduleTable;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.TextBox search;
     }
 }

@@ -32,6 +32,8 @@
             this.moduleTable = new System.Windows.Forms.DataGridView();
             this.btnAddModule = new System.Windows.Forms.Button();
             this.btnDeleteModule = new System.Windows.Forms.Button();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.search = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.moduleTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,12 +95,32 @@
             this.btnDeleteModule.UseVisualStyleBackColor = false;
             this.btnDeleteModule.Click += new System.EventHandler(this.btnDeleteModule_Click);
             // 
+            // lblSearch
+            // 
+            this.lblSearch.Location = new System.Drawing.Point(501, 85);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(55, 20);
+            this.lblSearch.TabIndex = 19;
+            this.lblSearch.Text = "Search:";
+            this.lblSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // search
+            // 
+            this.search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.search.Location = new System.Drawing.Point(558, 81);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(100, 22);
+            this.search.TabIndex = 18;
+            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
+            // 
             // ModulePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(944, 353);
+            this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.search);
             this.Controls.Add(this.btnDeleteModule);
             this.Controls.Add(this.btnAddModule);
             this.Controls.Add(this.moduleTable);
@@ -108,6 +130,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.moduleTable)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -117,5 +140,7 @@
         private System.Windows.Forms.DataGridView moduleTable;
         private System.Windows.Forms.Button btnAddModule;
         private System.Windows.Forms.Button btnDeleteModule;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.TextBox search;
     }
 }

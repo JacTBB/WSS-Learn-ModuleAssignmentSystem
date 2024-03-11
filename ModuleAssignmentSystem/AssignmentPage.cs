@@ -86,5 +86,26 @@ namespace ModuleAssignmentSystem
                 popup.ShowDialog(this);
             }
         }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in moduleTable.Rows)
+            {
+                if (row.Index < 0) return;
+                row.Selected = false;
+
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if ((cell.ValueType == typeof(string) || cell.ValueType == typeof(int)) && cell.Value != null)
+                    {
+                        string CellValue = cell.Value.ToString();
+                        if (CellValue.StartsWith(search.Text, StringComparison.CurrentCultureIgnoreCase) && !string.IsNullOrEmpty(search.Text))
+                        {
+                            row.Selected = true;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

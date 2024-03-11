@@ -31,6 +31,8 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnUnassign = new System.Windows.Forms.Button();
             this.moduleTable = new System.Windows.Forms.DataGridView();
+            this.search = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.moduleTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,11 +79,31 @@
             this.moduleTable.TabIndex = 11;
             this.moduleTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.moduleTable_CellContentClick);
             // 
+            // search
+            // 
+            this.search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.search.Location = new System.Drawing.Point(684, 81);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(100, 22);
+            this.search.TabIndex = 14;
+            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.Location = new System.Drawing.Point(625, 87);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(55, 20);
+            this.lblSearch.TabIndex = 15;
+            this.lblSearch.Text = "Search:";
+            this.lblSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // AssignmentPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 353);
+            this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.search);
             this.Controls.Add(this.btnUnassign);
             this.Controls.Add(this.moduleTable);
             this.Controls.Add(this.lblTitle);
@@ -89,6 +111,7 @@
             this.Text = "AssignmentPage";
             ((System.ComponentModel.ISupportInitialize)(this.moduleTable)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -97,5 +120,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnUnassign;
         private System.Windows.Forms.DataGridView moduleTable;
+        private System.Windows.Forms.TextBox search;
+        private System.Windows.Forms.Label lblSearch;
     }
 }
