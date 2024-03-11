@@ -12,9 +12,12 @@ namespace ModuleAssignmentSystem
 {
     public partial class LoginForm : Form
     {
+        private MainForm MainForm;
+
         public LoginForm()
         {
             InitializeComponent();
+            this.MainForm = new MainForm(this);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -27,8 +30,7 @@ namespace ModuleAssignmentSystem
                 return;
             }
 
-            var MainPage = new MainForm();
-            MainPage.Show();
+            MainForm.Show();
             this.Hide();
         }
     }

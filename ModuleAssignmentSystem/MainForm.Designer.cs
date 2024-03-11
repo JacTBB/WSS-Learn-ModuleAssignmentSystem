@@ -28,15 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelNav = new System.Windows.Forms.Panel();
-            this.btnProfile = new System.Windows.Forms.Button();
+            this.btnProfile = new System.Windows.Forms.Panel();
+            this.lblProfile = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAssignment = new System.Windows.Forms.Button();
             this.btnTutor = new System.Windows.Forms.Button();
             this.btnModule = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelOuter = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelNav.SuspendLayout();
+            this.btnProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelOuter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,18 +63,42 @@
             // 
             // btnProfile
             // 
-            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnProfile.Controls.Add(this.lblProfile);
+            this.btnProfile.Controls.Add(this.pictureBox1);
             this.btnProfile.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnProfile.FlatAppearance.BorderSize = 0;
-            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfile.ForeColor = System.Drawing.Color.White;
-            this.btnProfile.Location = new System.Drawing.Point(782, 0);
+            this.btnProfile.Location = new System.Drawing.Point(762, 0);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(200, 50);
-            this.btnProfile.TabIndex = 4;
-            this.btnProfile.Text = "Welcome, User 1";
-            this.btnProfile.UseVisualStyleBackColor = false;
+            this.btnProfile.Size = new System.Drawing.Size(220, 50);
+            this.btnProfile.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.btnProfile, "Sign Out");
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // lblProfile
+            // 
+            this.lblProfile.AutoSize = true;
+            this.lblProfile.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfile.ForeColor = System.Drawing.Color.White;
+            this.lblProfile.Location = new System.Drawing.Point(16, 16);
+            this.lblProfile.Name = "lblProfile";
+            this.lblProfile.Size = new System.Drawing.Size(128, 19);
+            this.lblProfile.TabIndex = 1;
+            this.lblProfile.Text = "Welcome, User";
+            this.toolTip1.SetToolTip(this.lblProfile, "Sign Out");
+            this.lblProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ModuleAssignmentSystem.Properties.Resources.JackStudiosLogoTransparent;
+            this.pictureBox1.ImageLocation = "";
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(164, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "Sign Out");
+            this.pictureBox1.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnAssignment
             // 
@@ -153,6 +184,16 @@
             this.panelOuter.Size = new System.Drawing.Size(982, 420);
             this.panelOuter.TabIndex = 3;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ShowAlways = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -163,6 +204,9 @@
             this.Name = "MainForm";
             this.Text = "MainPage";
             this.panelNav.ResumeLayout(false);
+            this.btnProfile.ResumeLayout(false);
+            this.btnProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelOuter.ResumeLayout(false);
             this.panelOuter.PerformLayout();
             this.ResumeLayout(false);
@@ -173,11 +217,15 @@
 
         private System.Windows.Forms.Panel panelNav;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnAssignment;
         private System.Windows.Forms.Button btnTutor;
         private System.Windows.Forms.Button btnModule;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panelOuter;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel btnProfile;
+        private System.Windows.Forms.Label lblProfile;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

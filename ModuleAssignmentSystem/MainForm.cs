@@ -56,6 +56,8 @@ namespace ModuleAssignmentSystem
             });
         }
 
+        Form loginForm;
+
         Form homePage = new HomePage
         {
             TopLevel = false,
@@ -81,11 +83,13 @@ namespace ModuleAssignmentSystem
             FormBorderStyle = FormBorderStyle.None,
         };
 
-        public MainForm()
+        public MainForm(LoginForm loginForm)
         {
             InitModules();
             InitTutors();
             InitializeComponent();
+
+            this.loginForm = loginForm;
 
             panelMain.Controls.Add(homePage);
             panelMain.Controls.Add(modulePage);
@@ -125,6 +129,12 @@ namespace ModuleAssignmentSystem
             modulePage.Hide();
             tutorPage.Hide();
             assignmentPage.Show();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            loginForm.Show();
+            this.Hide();
         }
     }
 }
