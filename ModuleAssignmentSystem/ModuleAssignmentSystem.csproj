@@ -52,16 +52,22 @@
     <Compile Include="AssignmentPage.Designer.cs">
       <DependentUpon>AssignmentPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditModule.cs">
+    <Compile Include="Popups\AssignModule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditModule.Designer.cs">
+    <Compile Include="Popups\AssignModule.Designer.cs">
+      <DependentUpon>AssignModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\EditModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\EditModule.Designer.cs">
       <DependentUpon>EditModule.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditTutor.cs">
+    <Compile Include="Popups\EditTutor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditTutor.Designer.cs">
+    <Compile Include="Popups\EditTutor.Designer.cs">
       <DependentUpon>EditTutor.cs</DependentUpon>
     </Compile>
     <Compile Include="HomePage.cs">
@@ -89,17 +95,23 @@
     <Compile Include="ModulePage.Designer.cs">
       <DependentUpon>ModulePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewModule.cs">
+    <Compile Include="Popups\NewModule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewModule.Designer.cs">
+    <Compile Include="Popups\NewModule.Designer.cs">
       <DependentUpon>NewModule.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewTutor.cs">
+    <Compile Include="Popups\NewTutor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewTutor.Designer.cs">
+    <Compile Include="Popups\NewTutor.Designer.cs">
       <DependentUpon>NewTutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\ViewModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\ViewModule.Designer.cs">
+      <DependentUpon>ViewModule.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,10 +125,13 @@
     <EmbeddedResource Include="AssignmentPage.resx">
       <DependentUpon>AssignmentPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditModule.resx">
+    <EmbeddedResource Include="Popups\AssignModule.resx">
+      <DependentUpon>AssignModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\EditModule.resx">
       <DependentUpon>EditModule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditTutor.resx">
+    <EmbeddedResource Include="Popups\EditTutor.resx">
       <DependentUpon>EditTutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
@@ -131,11 +146,14 @@
     <EmbeddedResource Include="ModulePage.resx">
       <DependentUpon>ModulePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewModule.resx">
+    <EmbeddedResource Include="Popups\NewModule.resx">
       <DependentUpon>NewModule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewTutor.resx">
+    <EmbeddedResource Include="Popups\NewTutor.resx">
       <DependentUpon>NewTutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\ViewModule.resx">
+      <DependentUpon>ViewModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

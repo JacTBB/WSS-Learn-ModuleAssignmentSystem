@@ -13,25 +13,68 @@ namespace ModuleAssignmentSystem
 {
     public partial class MainForm : Form
     {
+        public static BindingList<Module> Modules { get; set; } = new BindingList<Module>();
+        public static BindingList<Tutor> Tutors { get; set; } = new BindingList<Tutor>();
+
+        private void InitModules()
+        {
+            Modules.Add(new Module
+            {
+                moduleCode = "IT1154",
+                moduleName = "Web Dev",
+                totalHours = 60,
+                startDate = DateTime.Now,
+                endDate = DateTime.Now,
+            });
+
+            Modules.Add(new Module
+            {
+                moduleCode = "IT1166",
+                moduleName = "App Dev Proj",
+                totalHours = 60,
+                startDate = DateTime.Now,
+                endDate = DateTime.Now,
+            });
+        }
+
+        private void InitTutors()
+        {
+            Tutors.Add(new Tutor
+            {
+                tutorId = "ID123",
+                tutorName = "Tutor 1",
+                email = "Tutor1@nyp.edu.sg",
+                phoneNumber = "12345678"
+            });
+
+            Tutors.Add(new Tutor
+            {
+                tutorId = "ID123",
+                tutorName = "Tutor 2",
+                email = "Tutor2@nyp.edu.sg",
+                phoneNumber = "87654321"
+            });
+        }
+
         Form homePage = new HomePage
         {
             TopLevel = false,
             AutoScroll = true,
             FormBorderStyle = FormBorderStyle.None,
         };
-        Form modulePage = new ModulePage
+        Form modulePage = new ModulePage(Modules)
         {
             TopLevel = false,
             AutoScroll = true,
             FormBorderStyle = FormBorderStyle.None,
         };
-        Form tutorPage = new TutorPage
+        Form tutorPage = new TutorPage(Tutors)
         {
             TopLevel = false,
             AutoScroll = true,
             FormBorderStyle = FormBorderStyle.None,
         };
-        Form assignmentPage = new AssignmentPage
+        Form assignmentPage = new AssignmentPage(Modules, Tutors)
         {
             TopLevel = false,
             AutoScroll = true,
@@ -40,6 +83,8 @@ namespace ModuleAssignmentSystem
 
         public MainForm()
         {
+            InitModules();
+            InitTutors();
             InitializeComponent();
 
             panelMain.Controls.Add(homePage);

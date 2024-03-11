@@ -14,5 +14,13 @@ namespace ModuleAssignmentSystem
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
         public Tutor tutor {  get; set; }
+
+        public string tutorName
+        {
+            get
+            {
+                return tutor?.tutorName;
+            }
+        }
     }
 }

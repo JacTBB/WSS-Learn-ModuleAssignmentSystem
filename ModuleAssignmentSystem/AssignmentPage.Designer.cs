@@ -62,6 +62,7 @@
             this.btnUnassign.TabIndex = 13;
             this.btnUnassign.Text = "Unassign";
             this.btnUnassign.UseVisualStyleBackColor = false;
+            this.btnUnassign.Click += new System.EventHandler(this.btnUnassign_Click);
             // 
             // moduleTable
             // 
@@ -74,6 +75,7 @@
             this.moduleTable.RowTemplate.Height = 24;
             this.moduleTable.Size = new System.Drawing.Size(882, 202);
             this.moduleTable.TabIndex = 11;
+            this.moduleTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.moduleTable_CellContentClick);
             // 
             // AssignmentPage
             // 

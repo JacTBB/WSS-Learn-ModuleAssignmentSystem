@@ -12,38 +12,17 @@ namespace ModuleAssignmentSystem
 {
     public partial class ModulePage : Form
     {
-         public BindingList<Module> Modules { get; set; } = new BindingList<Module>();
+        public BindingList<Module> Modules;
 
-        private void InitModules()
-        {
-            Modules.Add(new Module
-            {
-                moduleCode = "IT1154",
-                moduleName = "Web Dev",
-                totalHours = 60,
-                startDate = DateTime.Now,
-                endDate = DateTime.Now,
-            });
-
-            Modules.Add(new Module
-            {
-                moduleCode = "IT1166",
-                moduleName = "App Dev Proj",
-                totalHours = 60,
-                startDate = DateTime.Now,
-                endDate = DateTime.Now,
-            });
-        }
-
-        public ModulePage()
+        public ModulePage(BindingList<Module> Modules)
         {
             InitializeComponent();
-
-            InitModules();
+            this.Modules = Modules;
 
             moduleTable.DataSource = Modules;
             moduleTable.AllowUserToAddRows = false;
             moduleTable.Columns["tutor"].Visible = false;
+            moduleTable.Columns["tutorName"].Visible = false;
 
             DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
             editButtonColumn.Name = "Edit";

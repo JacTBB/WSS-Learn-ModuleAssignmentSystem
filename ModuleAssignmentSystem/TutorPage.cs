@@ -12,32 +12,12 @@ namespace ModuleAssignmentSystem
 {
     public partial class TutorPage : Form
     {
-        public BindingList<Tutor> Tutors { get; set; } = new BindingList<Tutor>();
+        public BindingList<Tutor> Tutors;
 
-        private void InitTutors()
-        {
-            Tutors.Add(new Tutor
-            {
-                tutorId = "ID123",
-                tutorName = "Tutor 1",
-                email = "Tutor1@nyp.edu.sg",
-                phoneNumber = "12345678"
-            });
-
-            Tutors.Add(new Tutor
-            {
-                tutorId = "ID123",
-                tutorName = "Tutor 2",
-                email = "Tutor2@nyp.edu.sg",
-                phoneNumber = "87654321"
-            });
-        }
-
-        public TutorPage()
+        public TutorPage(BindingList<Tutor> Tutors)
         {
             InitializeComponent();
-
-            InitTutors();
+            this.Tutors = Tutors;
 
             moduleTable.DataSource = Tutors;
             moduleTable.AllowUserToAddRows = false;
