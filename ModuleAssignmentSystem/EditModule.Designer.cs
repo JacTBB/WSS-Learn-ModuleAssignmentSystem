@@ -1,6 +1,6 @@
 ﻿namespace ModuleAssignmentSystem
 {
-    partial class NewModule
+    partial class EditModule
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.lblEnd = new System.Windows.Forms.Label();
             this.lblStart = new System.Windows.Forms.Label();
             this.inputEnd = new System.Windows.Forms.MonthCalendar();
@@ -50,7 +50,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.lblEnd);
             this.panel1.Controls.Add(this.lblStart);
             this.panel1.Controls.Add(this.inputEnd);
@@ -66,7 +66,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(632, 403);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // btnCancel
             // 
@@ -83,20 +83,20 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnAdd
+            // btnEdit
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(320, 356);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.btnAdd.Size = new System.Drawing.Size(120, 35);
-            this.btnAdd.TabIndex = 13;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnEdit.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(320, 356);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Padding = new System.Windows.Forms.Padding(3);
+            this.btnEdit.Size = new System.Drawing.Size(120, 35);
+            this.btnEdit.TabIndex = 13;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lblEnd
             // 
@@ -188,16 +188,16 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(101, 19);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Add Module";
+            this.lblTitle.Text = "Edit Module";
             // 
-            // NewModule
+            // EditModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 403);
             this.Controls.Add(this.panel1);
-            this.Name = "NewModule";
-            this.Text = "NewModule";
+            this.Name = "EditModule";
+            this.Text = "EditModule";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputHours)).EndInit();
@@ -208,18 +208,18 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblCode;
-        private System.Windows.Forms.TextBox inputCode;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Label lblEnd;
+        private System.Windows.Forms.Label lblStart;
+        private System.Windows.Forms.MonthCalendar inputEnd;
         private System.Windows.Forms.MonthCalendar inputStart;
         private System.Windows.Forms.Label lblHours;
         private System.Windows.Forms.NumericUpDown inputHours;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox inputName;
-        private System.Windows.Forms.Label lblEnd;
-        private System.Windows.Forms.Label lblStart;
-        private System.Windows.Forms.MonthCalendar inputEnd;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label lblCode;
+        private System.Windows.Forms.TextBox inputCode;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

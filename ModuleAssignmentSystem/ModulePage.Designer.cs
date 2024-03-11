@@ -61,6 +61,7 @@
             this.moduleTable.RowTemplate.Height = 24;
             this.moduleTable.Size = new System.Drawing.Size(882, 202);
             this.moduleTable.TabIndex = 5;
+            this.moduleTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.moduleTable_CellContentClick);
             // 
             // btnAddModule
             // 
@@ -90,11 +91,13 @@
             this.btnDeleteModule.TabIndex = 7;
             this.btnDeleteModule.Text = "Delete";
             this.btnDeleteModule.UseVisualStyleBackColor = false;
+            this.btnDeleteModule.Click += new System.EventHandler(this.btnDeleteModule_Click);
             // 
             // ModulePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(944, 353);
             this.Controls.Add(this.btnDeleteModule);
             this.Controls.Add(this.btnAddModule);
@@ -102,6 +105,7 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "ModulePage";
             this.Text = "ModulePage";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.moduleTable)).EndInit();
             this.ResumeLayout(false);
 

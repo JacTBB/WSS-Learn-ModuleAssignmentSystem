@@ -7,19 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
-using System.Net.Configuration;
 
 namespace ModuleAssignmentSystem
 {
-    public partial class NewModule : Form
+    public partial class EditModule : Form
     {
         private BindingList<Module> Modules;
+        private int RowIndex;
 
-        public NewModule(BindingList<Module> Modules)
+        public EditModule(BindingList<Module> Modules, int RowIndex)
         {
             InitializeComponent();
             this.Modules = Modules;
+            this.RowIndex = RowIndex;
+
+            Module module = Modules[RowIndex];
+            inputCode.Text = module.moduleCode;
+            inputName.Text = module.moduleName;
+            inputHours.Text = module.totalHours.ToString();
+            inputStart.SelectionStart = module.startDate;
+            inputEnd.SelectionEnd = module.endDate;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -27,7 +34,7 @@ namespace ModuleAssignmentSystem
             this.Close();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             var moduleCode = inputCode.Text;
             var moduleName = inputName.Text;
@@ -46,6 +53,7 @@ namespace ModuleAssignmentSystem
                 startDate = startDate,
                 endDate = endDate,
             };
+            Modules.RemoveAt(RowIndex);
             Modules.Add(module);
             this.Close();
         }

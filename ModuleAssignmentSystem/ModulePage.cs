@@ -12,7 +12,7 @@ namespace ModuleAssignmentSystem
 {
     public partial class ModulePage : Form
     {
-        public List<Module> Modules { get; set; }
+        public BindingList<Module> Modules { get; set; } = new BindingList<Module>();
 
         private void InitModules()
         {
@@ -33,27 +33,70 @@ namespace ModuleAssignmentSystem
                 startDate = DateTime.Now,
                 endDate = DateTime.Now,
             });
-        } 
+        }
+
+        public void AddModule(Module module)
+        {
+            Modules.Add(module);
+        }
 
         public ModulePage()
         {
             InitializeComponent();
 
-            Modules = new List<Module>();
             InitModules();
 
             moduleTable.DataSource = Modules;
+            moduleTable.AllowUserToAddRows = false;
+
+            DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
+            editButtonColumn.Name = "Edit";
+            editButtonColumn.Text = "Edit";
+            editButtonColumn.UseColumnTextForButtonValue = true;
+            moduleTable.Columns.Add(editButtonColumn);
+
+            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+            deleteButtonColumn.Name = "Delete";
+            deleteButtonColumn.Text = "Delete";
+            deleteButtonColumn.UseColumnTextForButtonValue = true;
+            moduleTable.Columns.Add(deleteButtonColumn);
         }
 
         private void btnAddModule_Click(object sender, EventArgs e)
         {
-            Form popup = new NewModule
+            Form popup = new NewModule(Modules)
             {
                 TopLevel = true,
                 AutoScroll = false,
                 FormBorderStyle = FormBorderStyle.FixedSingle,
             };
             popup.ShowDialog(this);
+        }
+
+        private void btnDeleteModule_Click(object sender, EventArgs e)
+        {
+            int rowIndex = moduleTable.CurrentCell.RowIndex;
+            moduleTable.Rows.RemoveAt(rowIndex);
+        }
+
+        private void moduleTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            if (moduleTable.Columns[e.ColumnIndex].Name == "Edit")
+            {
+                Form popup = new EditModule(Modules, e.RowIndex)
+                {
+                    TopLevel = true,
+                    AutoScroll = false,
+                    FormBorderStyle = FormBorderStyle.FixedSingle,
+                };
+                popup.ShowDialog(this);
+            }
+            else if (moduleTable.Columns[e.ColumnIndex].Name == "Delete")
+            {
+                moduleTable.Rows.RemoveAt(e.RowIndex);
+            }
         }
     }
 }

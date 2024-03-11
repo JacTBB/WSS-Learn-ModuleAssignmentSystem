@@ -52,6 +52,12 @@
     <Compile Include="AssignmentPage.Designer.cs">
       <DependentUpon>AssignmentPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditModule.Designer.cs">
+      <DependentUpon>EditModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </Compile>
     <EmbeddedResource Include="AssignmentPage.resx">
       <DependentUpon>AssignmentPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditModule.resx">
+      <DependentUpon>EditModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
