@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.lblTitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnUnassign = new System.Windows.Forms.Button();
+            this.moduleTable = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleTable)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -47,32 +49,51 @@
             this.lblTitle.Text = " Assignment";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // btnUnassign
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(305, 169);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Assignment";
+            this.btnUnassign.BackColor = System.Drawing.Color.IndianRed;
+            this.btnUnassign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUnassign.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUnassign.ForeColor = System.Drawing.Color.White;
+            this.btnUnassign.Location = new System.Drawing.Point(790, 72);
+            this.btnUnassign.Name = "btnUnassign";
+            this.btnUnassign.Padding = new System.Windows.Forms.Padding(3);
+            this.btnUnassign.Size = new System.Drawing.Size(120, 35);
+            this.btnUnassign.TabIndex = 13;
+            this.btnUnassign.Text = "Unassign";
+            this.btnUnassign.UseVisualStyleBackColor = false;
+            // 
+            // moduleTable
+            // 
+            this.moduleTable.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.moduleTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.moduleTable.GridColor = System.Drawing.Color.WhiteSmoke;
+            this.moduleTable.Location = new System.Drawing.Point(28, 113);
+            this.moduleTable.Name = "moduleTable";
+            this.moduleTable.RowHeadersWidth = 51;
+            this.moduleTable.RowTemplate.Height = 24;
+            this.moduleTable.Size = new System.Drawing.Size(882, 202);
+            this.moduleTable.TabIndex = 11;
             // 
             // AssignmentPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 353);
+            this.Controls.Add(this.btnUnassign);
+            this.Controls.Add(this.moduleTable);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.label1);
             this.Name = "AssignmentPage";
             this.Text = "AssignmentPage";
+            ((System.ComponentModel.ISupportInitialize)(this.moduleTable)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnUnassign;
+        private System.Windows.Forms.DataGridView moduleTable;
     }
 }

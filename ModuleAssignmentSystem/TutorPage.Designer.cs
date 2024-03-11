@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.lblTitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnDeleteTutor = new System.Windows.Forms.Button();
+            this.btnAddTutor = new System.Windows.Forms.Button();
+            this.moduleTable = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleTable)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -47,32 +50,70 @@
             this.lblTitle.Text = "Tutor";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // btnDeleteTutor
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(192, 114);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "TUTOR";
+            this.btnDeleteTutor.BackColor = System.Drawing.Color.IndianRed;
+            this.btnDeleteTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteTutor.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteTutor.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteTutor.Location = new System.Drawing.Point(664, 72);
+            this.btnDeleteTutor.Name = "btnDeleteTutor";
+            this.btnDeleteTutor.Padding = new System.Windows.Forms.Padding(3);
+            this.btnDeleteTutor.Size = new System.Drawing.Size(120, 35);
+            this.btnDeleteTutor.TabIndex = 10;
+            this.btnDeleteTutor.Text = "Delete";
+            this.btnDeleteTutor.UseVisualStyleBackColor = false;
+            this.btnDeleteTutor.Click += new System.EventHandler(this.btnDeleteTutor_Click);
+            // 
+            // btnAddTutor
+            // 
+            this.btnAddTutor.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAddTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddTutor.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTutor.ForeColor = System.Drawing.Color.White;
+            this.btnAddTutor.Location = new System.Drawing.Point(790, 72);
+            this.btnAddTutor.Name = "btnAddTutor";
+            this.btnAddTutor.Padding = new System.Windows.Forms.Padding(3);
+            this.btnAddTutor.Size = new System.Drawing.Size(120, 35);
+            this.btnAddTutor.TabIndex = 9;
+            this.btnAddTutor.Text = "Add Tutor";
+            this.btnAddTutor.UseVisualStyleBackColor = false;
+            this.btnAddTutor.Click += new System.EventHandler(this.btnAddTutor_Click);
+            // 
+            // moduleTable
+            // 
+            this.moduleTable.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.moduleTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.moduleTable.GridColor = System.Drawing.Color.WhiteSmoke;
+            this.moduleTable.Location = new System.Drawing.Point(28, 113);
+            this.moduleTable.Name = "moduleTable";
+            this.moduleTable.RowHeadersWidth = 51;
+            this.moduleTable.RowTemplate.Height = 24;
+            this.moduleTable.Size = new System.Drawing.Size(882, 202);
+            this.moduleTable.TabIndex = 8;
+            this.moduleTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.moduleTable_CellContentClick);
             // 
             // TutorPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 353);
+            this.Controls.Add(this.btnDeleteTutor);
+            this.Controls.Add(this.btnAddTutor);
+            this.Controls.Add(this.moduleTable);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.label1);
             this.Name = "TutorPage";
             this.Text = "TutorPage";
+            ((System.ComponentModel.ISupportInitialize)(this.moduleTable)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDeleteTutor;
+        private System.Windows.Forms.Button btnAddTutor;
+        private System.Windows.Forms.DataGridView moduleTable;
     }
 }

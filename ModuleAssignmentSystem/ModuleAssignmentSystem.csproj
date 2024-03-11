@@ -58,6 +58,12 @@
     <Compile Include="EditModule.Designer.cs">
       <DependentUpon>EditModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditTutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTutor.Designer.cs">
+      <DependentUpon>EditTutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,8 +95,15 @@
     <Compile Include="NewModule.Designer.cs">
       <DependentUpon>NewModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewTutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewTutor.Designer.cs">
+      <DependentUpon>NewTutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tutor.cs" />
     <Compile Include="TutorPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditModule.resx">
       <DependentUpon>EditModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTutor.resx">
+      <DependentUpon>EditTutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -118,6 +134,9 @@
     <EmbeddedResource Include="NewModule.resx">
       <DependentUpon>NewModule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewTutor.resx">
+      <DependentUpon>NewTutor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -131,7 +150,7 @@
       <DependentUpon>TutorPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">

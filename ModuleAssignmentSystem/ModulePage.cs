@@ -12,7 +12,7 @@ namespace ModuleAssignmentSystem
 {
     public partial class ModulePage : Form
     {
-        public BindingList<Module> Modules { get; set; } = new BindingList<Module>();
+         public BindingList<Module> Modules { get; set; } = new BindingList<Module>();
 
         private void InitModules()
         {
@@ -35,11 +35,6 @@ namespace ModuleAssignmentSystem
             });
         }
 
-        public void AddModule(Module module)
-        {
-            Modules.Add(module);
-        }
-
         public ModulePage()
         {
             InitializeComponent();
@@ -48,6 +43,7 @@ namespace ModuleAssignmentSystem
 
             moduleTable.DataSource = Modules;
             moduleTable.AllowUserToAddRows = false;
+            moduleTable.Columns["tutor"].Visible = false;
 
             DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
             editButtonColumn.Name = "Edit";
@@ -76,7 +72,10 @@ namespace ModuleAssignmentSystem
         private void btnDeleteModule_Click(object sender, EventArgs e)
         {
             int rowIndex = moduleTable.CurrentCell.RowIndex;
-            moduleTable.Rows.RemoveAt(rowIndex);
+            if (MessageBox.Show("Confirm?", "Delete Module", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                moduleTable.Rows.RemoveAt(rowIndex);
+            }
         }
 
         private void moduleTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -95,7 +94,10 @@ namespace ModuleAssignmentSystem
             }
             else if (moduleTable.Columns[e.ColumnIndex].Name == "Delete")
             {
-                moduleTable.Rows.RemoveAt(e.RowIndex);
+                if (MessageBox.Show("Confirm?", "Delete Module", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    moduleTable.Rows.RemoveAt(e.RowIndex);
+                }
             }
         }
     }

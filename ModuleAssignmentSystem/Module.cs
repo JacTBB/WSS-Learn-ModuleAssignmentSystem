@@ -13,5 +13,6 @@ namespace ModuleAssignmentSystem
         public int totalHours { get; set; }
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
+        public Tutor tutor {  get; set; }
     }
 }
