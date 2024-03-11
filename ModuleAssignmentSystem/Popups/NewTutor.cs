@@ -13,9 +13,9 @@ namespace ModuleAssignmentSystem
 {
     public partial class NewTutor : Form
     {
-        private BindingList<Tutor> Tutors;
+        private SortableBindingList<Tutor> Tutors;
 
-        public NewTutor(BindingList<Tutor> Tutors)
+        public NewTutor(SortableBindingList<Tutor> Tutors)
         {
             InitializeComponent();
             this.Tutors = Tutors;

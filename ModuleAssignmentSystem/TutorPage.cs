@@ -12,15 +12,20 @@ namespace ModuleAssignmentSystem
 {
     public partial class TutorPage : Form
     {
-        public BindingList<Tutor> Tutors;
+        public SortableBindingList<Tutor> Tutors;
 
-        public TutorPage(BindingList<Tutor> Tutors)
+        public TutorPage(SortableBindingList<Tutor> Tutors)
         {
             InitializeComponent();
             this.Tutors = Tutors;
 
             moduleTable.DataSource = Tutors;
             moduleTable.AllowUserToAddRows = false;
+
+            moduleTable.Columns["tutorId"].HeaderText = "Tutor ID";
+            moduleTable.Columns["tutorName"].HeaderText = "Tutor Name";
+            moduleTable.Columns["email"].HeaderText = "Email";
+            moduleTable.Columns["phoneNumber"].HeaderText = "Phone No.";
 
             DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
             editButtonColumn.Name = "Edit";

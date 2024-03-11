@@ -13,9 +13,9 @@ namespace ModuleAssignmentSystem
 {
     public partial class NewModule : Form
     {
-        private BindingList<Module> Modules;
+        private SortableBindingList<Module> Modules;
 
-        public NewModule(BindingList<Module> Modules)
+        public NewModule(SortableBindingList<Module> Modules)
         {
             InitializeComponent();
             this.Modules = Modules;

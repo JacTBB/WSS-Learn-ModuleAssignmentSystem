@@ -12,10 +12,10 @@ namespace ModuleAssignmentSystem
 {
     public partial class EditTutor : Form
     {
-        private BindingList<Tutor> Tutors;
+        private SortableBindingList<Tutor> Tutors;
         private int RowIndex;
 
-        public EditTutor(BindingList<Tutor> Tutors, int RowIndex)
+        public EditTutor(SortableBindingList<Tutor> Tutors, int RowIndex)
         {
             InitializeComponent();
             this.Tutors = Tutors;

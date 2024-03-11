@@ -12,11 +12,11 @@ namespace ModuleAssignmentSystem.Popups
 {
     public partial class ViewModule : Form
     {
-        private BindingList<Module> Modules;
-        private BindingList<Tutor> Tutors;
+        private SortableBindingList<Module> Modules;
+        private SortableBindingList<Tutor> Tutors;
         private int RowIndex;
 
-        public ViewModule(BindingList<Module> modules, BindingList<Tutor> tutors, int RowIndex)
+        public ViewModule(SortableBindingList<Module> modules, SortableBindingList<Tutor> tutors, int RowIndex)
         {
             InitializeComponent();
             this.Modules = modules;

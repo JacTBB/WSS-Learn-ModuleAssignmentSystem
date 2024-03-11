@@ -13,11 +13,11 @@ namespace ModuleAssignmentSystem.Popups
 {
     public partial class AssignModule : Form
     {
-        private BindingList<Module> Modules;
-        private BindingList<Tutor> Tutors;
+        private SortableBindingList<Module> Modules;
+        private SortableBindingList<Tutor> Tutors;
         private int RowIndex;
 
-        public AssignModule(BindingList<Module> modules, BindingList<Tutor> tutors, int RowIndex)
+        public AssignModule(SortableBindingList<Module> modules, SortableBindingList<Tutor> tutors, int RowIndex)
         {
             InitializeComponent();
             this.Modules = modules;
@@ -33,7 +33,12 @@ namespace ModuleAssignmentSystem.Popups
 
             foreach (Tutor tutor in tutors)
             {
-                inputAssign.Items.Add(tutor.tutorName);
+                bool isTutorAssigned = Modules.Any(m => m.tutor == tutor);
+
+                if (!isTutorAssigned)
+                {
+                    inputAssign.Items.Add(tutor.tutorName);
+                }
             }
             if (module.tutor != null)
             {

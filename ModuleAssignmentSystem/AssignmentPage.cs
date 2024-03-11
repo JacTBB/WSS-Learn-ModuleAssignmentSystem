@@ -13,10 +13,10 @@ namespace ModuleAssignmentSystem
 {
     public partial class AssignmentPage : Form
     {
-        public BindingList<Module> Modules;
-        public BindingList<Tutor> Tutors;
+        public SortableBindingList<Module> Modules;
+        public SortableBindingList<Tutor> Tutors;
 
-        public AssignmentPage(BindingList<Module> Modules, BindingList<Tutor> Tutors)
+        public AssignmentPage(SortableBindingList<Module> Modules, SortableBindingList<Tutor> Tutors)
         {
             InitializeComponent();
             this.Modules = Modules;
@@ -30,6 +30,10 @@ namespace ModuleAssignmentSystem
             moduleTable.Columns["endDate"].Visible = false;
             moduleTable.Columns["tutor"].Visible = false;
 
+            moduleTable.Columns["moduleCode"].HeaderText = "Module Code";
+            moduleTable.Columns["moduleName"].HeaderText = "Module Name";
+            moduleTable.Columns["tutorName"].HeaderText = "Tutor";
+
             DataGridViewButtonColumn viewButtonColumn = new DataGridViewButtonColumn();
             viewButtonColumn.Name = "View";
             viewButtonColumn.Text = "View";
@@ -42,6 +46,7 @@ namespace ModuleAssignmentSystem
             assignButtonColumn.UseColumnTextForButtonValue = true;
             moduleTable.Columns.Add(assignButtonColumn);
         }
+
         private void btnUnassign_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Confirm?", "Unassign Tutor", MessageBoxButtons.YesNo) == DialogResult.Yes)

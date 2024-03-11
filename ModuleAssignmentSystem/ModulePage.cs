@@ -12,9 +12,9 @@ namespace ModuleAssignmentSystem
 {
     public partial class ModulePage : Form
     {
-        public BindingList<Module> Modules;
+        public SortableBindingList<Module> Modules;
 
-        public ModulePage(BindingList<Module> Modules)
+        public ModulePage(SortableBindingList<Module> Modules)
         {
             InitializeComponent();
             this.Modules = Modules;
@@ -23,6 +23,12 @@ namespace ModuleAssignmentSystem
             moduleTable.AllowUserToAddRows = false;
             moduleTable.Columns["tutor"].Visible = false;
             moduleTable.Columns["tutorName"].Visible = false;
+
+            moduleTable.Columns["moduleCode"].HeaderText = "Module Code";
+            moduleTable.Columns["moduleName"].HeaderText = "Module Name";
+            moduleTable.Columns["totalHours"].HeaderText = "Total Hours";
+            moduleTable.Columns["startDate"].HeaderText = "Start Date";
+            moduleTable.Columns["endDate"].HeaderText = "End Date";
 
             DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
             editButtonColumn.Name = "Edit";

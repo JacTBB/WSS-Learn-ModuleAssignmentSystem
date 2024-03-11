@@ -13,8 +13,8 @@ namespace ModuleAssignmentSystem
 {
     public partial class MainForm : Form
     {
-        public static BindingList<Module> Modules { get; set; } = new BindingList<Module>();
-        public static BindingList<Tutor> Tutors { get; set; } = new BindingList<Tutor>();
+        public static SortableBindingList<Module> Modules { get; set; } = new SortableBindingList<Module>();
+        public static SortableBindingList<Tutor> Tutors { get; set; } = new SortableBindingList<Tutor>();
 
         private void InitModules()
         {
