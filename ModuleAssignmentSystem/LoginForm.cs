@@ -27,6 +27,13 @@ namespace ModuleAssignmentSystem
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
+                MessageBox.Show("Empty Credentials", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (username != "admin" || password != "123")
+            {
+                MessageBox.Show("Wrong Credentials", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
