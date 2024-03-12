@@ -25,6 +25,7 @@ namespace ModuleAssignmentSystem
             moduleTable.DataSource = Modules;
             moduleTable.AllowUserToAddRows = false;
             moduleTable.MultiSelect = true;
+            moduleTable.RowHeadersVisible = false;
             moduleTable.Columns["totalHours"].Visible = false;
             moduleTable.Columns["startDate"].Visible = false;
             moduleTable.Columns["endDate"].Visible = false;
@@ -33,6 +34,12 @@ namespace ModuleAssignmentSystem
             moduleTable.Columns["moduleCode"].HeaderText = "Module Code";
             moduleTable.Columns["moduleName"].HeaderText = "Module Name";
             moduleTable.Columns["tutorName"].HeaderText = "Tutor";
+
+            DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+            checkBoxColumn.HeaderText = "";
+            checkBoxColumn.Width = 30;
+            checkBoxColumn.Name = "checkBoxColumn";
+            moduleTable.Columns.Insert(0, checkBoxColumn);
 
             DataGridViewButtonColumn viewButtonColumn = new DataGridViewButtonColumn();
             viewButtonColumn.Name = "View";
@@ -51,12 +58,16 @@ namespace ModuleAssignmentSystem
         {
             if (MessageBox.Show("Confirm?", "Unassign Tutor", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                foreach (DataGridViewCell cell in moduleTable.SelectedCells)
+                for (int i = moduleTable.Rows.Count - 1; i >= 0; i--)
                 {
-                    var rowIndex = cell.RowIndex;
-                    Module module = Modules[rowIndex];
-                    module.tutor = null;
-                    Modules.ResetItem(rowIndex);
+                    DataGridViewRow row = moduleTable.Rows[i];
+                    if (Convert.ToBoolean(row.Cells["checkBoxColumn"].Value) == true)
+                    {
+                        var rowIndex = row.Index;
+                        Module module = Modules[rowIndex];
+                        module.tutor = null;
+                        Modules.ResetItem(rowIndex);
+                    }
                 }
             }
         }

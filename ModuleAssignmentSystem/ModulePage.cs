@@ -21,6 +21,8 @@ namespace ModuleAssignmentSystem
 
             moduleTable.DataSource = Modules;
             moduleTable.AllowUserToAddRows = false;
+            moduleTable.MultiSelect = true;
+            moduleTable.RowHeadersVisible = false;
             moduleTable.Columns["tutor"].Visible = false;
             moduleTable.Columns["tutorName"].Visible = false;
 
@@ -29,6 +31,12 @@ namespace ModuleAssignmentSystem
             moduleTable.Columns["totalHours"].HeaderText = "Total Hours";
             moduleTable.Columns["startDate"].HeaderText = "Start Date";
             moduleTable.Columns["endDate"].HeaderText = "End Date";
+
+            DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+            checkBoxColumn.HeaderText = "";
+            checkBoxColumn.Width = 30;
+            checkBoxColumn.Name = "checkBoxColumn";
+            moduleTable.Columns.Insert(0, checkBoxColumn);
 
             DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
             editButtonColumn.Name = "Edit";
@@ -56,10 +64,16 @@ namespace ModuleAssignmentSystem
 
         private void btnDeleteModule_Click(object sender, EventArgs e)
         {
-            int rowIndex = moduleTable.CurrentCell.RowIndex;
             if (MessageBox.Show("Confirm?", "Delete Module", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                moduleTable.Rows.RemoveAt(rowIndex);
+                for (int i = moduleTable.Rows.Count - 1; i >= 0; i--)
+                {
+                    DataGridViewRow row = moduleTable.Rows[i];
+                    if (Convert.ToBoolean(row.Cells["checkBoxColumn"].Value) == true)
+                    {
+                        moduleTable.Rows.Remove(row);
+                    }
+                }
             }
         }
 
